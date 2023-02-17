@@ -1,0 +1,41 @@
+{
+	"info": {
+		"_postman_id": "486344fc-7cb5-45fc-bb76-6f3eefb081de",
+		"name": "titanic_api",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "7274366"
+	},
+	"item": [
+		{
+			"name": "predict",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "[\n    {\"Age\": 85, \"Sex\": \"male\", \"Embarked\": \"S\"},\n    {\"Age\": 24, \"Sex\": \"female\", \"Embarked\": \"C\"},\n    {\"Age\": 3, \"Sex\": \"male\", \"Embarked\": \"C\"},\n    {\"Age\": 21, \"Sex\": \"male\", \"Embarked\": \"S\"}\n]",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:6000/predict",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "6000",
+					"path": [
+						"predict"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
