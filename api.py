@@ -8,16 +8,16 @@ import joblib
 app = Flask(__name__)
 
 
-@app.route('/predict', methods=['GET'])
+@app.route('/predict', methods=['POST'])
 def predict():
     if lr:
         try:
-            json = request.json
+            json = request.json            
             query = pd.get_dummies(pd.DataFrame(json))
             query = query.reindex(columns=model_columns, fill_value=0)
-
-            prediction = lr.predict(query)
-            return jsonify({'prediction': list(prediction)})
+            prediction = lr.predict(query).tolist()
+            
+            return jsonify({'prediction': prediction})
         except:
             return jsonify({'trace': traceback.format_exc()})
     else:
